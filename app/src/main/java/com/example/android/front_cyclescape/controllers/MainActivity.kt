@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.android.front_cyclescape.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity()
 {
@@ -15,7 +16,12 @@ class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btMap = findViewById<Button>(R.id.btMap)
+        val btCart = findViewById<FloatingActionButton>(R.id.btCart)
 
+        btCart.setOnClickListener {
+            val intent = Intent(this, ShoppingActivity::class.java)
+            startActivity(intent)
+        }
         btMap.setOnClickListener {
             val intent = Intent(
                 this,
@@ -23,7 +29,6 @@ class MainActivity : AppCompatActivity()
             )
             startActivity(intent)
         }
-
     }
 }
 
