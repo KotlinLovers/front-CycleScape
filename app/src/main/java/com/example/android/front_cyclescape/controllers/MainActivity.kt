@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btHome = findViewById<Button>(R.id.btMap)
+        val btMap = findViewById<Button>(R.id.btMap)
 
-        btHome.setOnClickListener {
+        btMap.setOnClickListener {
             val intent = Intent(
                 this,
                 MapActivity::class.java
