@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controllers.ShoppingActivity">
+
+    <!-- Encabezado del carrito -->
+    <RelativeLayout
+        android:id="@+id/id1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/orange"
+        android:layout_alignParentTop="true">
+
+        <!-- Total del carrito -->
+        <TextView
+            android:id="@+id/precio_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: $0"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="7dp" />
+    </RelativeLayout>
+
+    <!-- Mensaje de éxito -->
+    <TextView
+        android:id="@+id/mensaje1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_centerVertical="true"
+        android:text="Felicitaciones, tu alquiler fue realizado con éxito!"
+        android:visibility="gone" />
+
+    <!-- Contenedor de productos en el carrito -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/id1">
+
+        <!-- Agrega aquí elementos para cada producto en el carrito -->
+        <!-- Puedes usar LinearLayout, CardView, etc. para mostrar la información del producto -->
+        <!-- Ejemplo de un elemento de producto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Imagen del producto -->
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/product_image1" />
+
+            <!-- Descripción del producto -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del producto"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Precio: $50"
+                android:textSize="16sp" />
+
+            <!-- Botones de acción (Eliminar del carrito, Ver más detalles, etc.) -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eliminar" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver más" />
+        </LinearLayout>
+
+        <!-- Agrega más elementos de producto según sea necesario -->
+    </ScrollView>
+
+    <!-- Botón para continuar -->
+    <Button
+        android:id="@+id/siguiente_proceso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:text="Continuar" />
+</RelativeLayout>
