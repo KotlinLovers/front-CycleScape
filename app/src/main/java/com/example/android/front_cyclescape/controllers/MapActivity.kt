@@ -1,33 +1,29 @@
-package com.example.android.front_cyclescape
+package com.example.android.front_cyclescape.controllers
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
+import com.example.android.front_cyclescape.R
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback,
-    GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
-
-
+class MapActivity : AppCompatActivity(), GoogleMap.OnMapClickListener,
+    GoogleMap.OnMapLongClickListener, OnMapReadyCallback {
     lateinit var txtLatitude: EditText
     lateinit var txtLongitude: EditText
     lateinit var mMap: GoogleMap
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_map)
         txtLatitude = findViewById(R.id.txtLatitude)
         txtLongitude = findViewById(R.id.txtLongitude)
         val mapFragment = supportFragmentManager.findFragmentById(R.id.maps) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
-
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -50,9 +46,4 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback,
         txtLatitude.setText(" " + latLng.latitude);
         txtLongitude.setText(" " + latLng.longitude);
     }
-
 }
-
-
-
-
