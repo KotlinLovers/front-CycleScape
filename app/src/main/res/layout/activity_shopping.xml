@@ -46,9 +46,6 @@
         android:layout_height="match_parent"
         android:layout_below="@id/id1">
 
-        <!-- Agrega aquí elementos para cada producto en el carrito -->
-        <!-- Puedes usar LinearLayout, CardView, etc. para mostrar la información del producto -->
-        <!-- Ejemplo de un elemento de producto -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,7 +72,7 @@
                 android:text="Precio: $50"
                 android:textSize="16sp" />
 
-            <!-- Botones de acción (Eliminar del carrito, Ver más detalles, etc.) -->
+            <!-- Botones de acción -->
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,10 +84,8 @@
                 android:text="Ver más" />
         </LinearLayout>
 
-        <!-- Agrega más elementos de producto según sea necesario -->
     </ScrollView>
 
-    <!-- Botón para continuar -->
     <Button
         android:id="@+id/siguiente_proceso"
         android:layout_width="match_parent"
